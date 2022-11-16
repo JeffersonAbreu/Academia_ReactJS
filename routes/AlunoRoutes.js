@@ -9,4 +9,5 @@ router.delete("/:id", deleteAluno);
 router.get("/:id", getAluno);
 router.get("/", getAlunos);
 
+
 export default router;

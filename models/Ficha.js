@@ -36,4 +36,5 @@ const FichaSchema = new Schema(
     },
     { timestamps: true }
 );
+
 export default mongoose.model("Ficha", FichaSchema);

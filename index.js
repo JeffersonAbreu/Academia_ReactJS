@@ -22,8 +22,9 @@ app.use("/api/gruposmusculares", grupoMuscularRoutes);
 app.use("/api/instrutores", instrutorRoutes);
 app.use("/api/tiposexercicios", tipoExercicioRoutes);
 
-//
+
 app.listen(8080, () => {
     connectDatabase();
     console.log('Servidor rodando na porta 8080.');
+
 });

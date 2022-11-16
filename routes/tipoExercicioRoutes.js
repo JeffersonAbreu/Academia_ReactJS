@@ -12,4 +12,5 @@ router.get("/:id", getTipoExercicio);
 
 router.get("/", getTipoExercicios);
 
+
 export default router;

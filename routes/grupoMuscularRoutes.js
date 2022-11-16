@@ -12,4 +12,5 @@ router.get("/:id", getGrupoMuscular);
 
 router.get("/", getGrupoMusculares);
 
+
 export default router;

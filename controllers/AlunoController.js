@@ -45,6 +45,7 @@ export const getAluno = async (req, res, next) => {
     }
 }
 
+
 export const getAlunos = async (req, res, next) => {
     try {
         const alunos = await Aluno.find();

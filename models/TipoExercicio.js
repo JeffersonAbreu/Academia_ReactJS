@@ -27,4 +27,5 @@ const TipoExercicioSchema = new Schema({
     },
     grupoMuscular: GrupoMuscular.schema,
 });
+
 export default mongoose.model("TipoExercicio", TipoExercicioSchema);

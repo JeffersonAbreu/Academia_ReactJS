@@ -45,6 +45,7 @@ export const getInstrutor = async (req, res, next) => {
     }
 }
 
+
 export const getInstrutores = async (req, res, next) => {
     try {
         const instrutores = await Instrutor.find();

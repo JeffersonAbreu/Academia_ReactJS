@@ -12,4 +12,5 @@ router.get("/:id", getFicha);
 
 router.get("/", getFichas);
 
+
 export default router;

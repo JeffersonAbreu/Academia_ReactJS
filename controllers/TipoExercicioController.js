@@ -45,6 +45,7 @@ export const getTipoExercicio = async (req, res, next) => {
     }
 }
 
+
 export const getTipoExercicios = async (req, res, next) => {
     try {
         const tipoExercicios = await TipoExercicio.find();

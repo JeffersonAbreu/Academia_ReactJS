@@ -44,6 +44,7 @@ export const getGrupoMuscular = async (req, res, next) => {
     }
 }
 
+
 export const getGrupoMusculares = async (req, res, next) => {
     try {
         const grupoMusculares = await GrupoMuscular.find();

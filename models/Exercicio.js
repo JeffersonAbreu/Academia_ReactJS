@@ -29,4 +29,5 @@ const ExercicioSchema = new Schema({
         required: true,
     },
 });
+
 export default mongoose.model("Exercicio", ExercicioSchema);

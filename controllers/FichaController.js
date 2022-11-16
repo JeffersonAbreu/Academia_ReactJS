@@ -44,6 +44,7 @@ export const getFicha = async (req, res, next) => {
     }
 }
 
+
 export const getFichas = async (req, res, next) => {
     try {
         const fichas = await Ficha.find();

@@ -12,4 +12,5 @@ router.get("/:id", getInstrutor);
 
 router.get("/", getInstrutores);
 
+
 export default router;
