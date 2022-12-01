@@ -1,16 +1,13 @@
 import express from "express";
 import { createFicha, updateFicha, deleteFicha, getFicha, getFichas} from "../controllers/FichaController.js"
+import { verificarToken } from "../utils/verificarToken.js";
+
 const router = express.Router();
 
-router.post("/", createFicha);
-
-router.put("/:id", updateFicha);
-
-router.delete("/:id", deleteFicha);
-
-router.get("/:id", getFicha);
-
-router.get("/", getFichas);
-
+router.post("/", verificarToken, createFicha);
+router.put("/:id", verificarToken, updateFicha);
+router.delete("/:id", verificarToken, deleteFicha);
+router.get("/:id", verificarToken, getFicha);
+router.get("/", verificarToken, getFichas);
 
 export default router;

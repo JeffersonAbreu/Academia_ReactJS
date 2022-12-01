@@ -2,7 +2,8 @@ import mongoose from "mongoose";
 
 const connectDatabase = async() => {
     try {
-        await mongoose.connect(process.env.MONGODB_LOCAL);
+        await mongoose.connect(process.env.MONGODB_ATLAS);
+        // await mongoose.connect(process.env.MONGODB_LOCAL);
     } catch (error) {
         throw error;
     }

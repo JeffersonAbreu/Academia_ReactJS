@@ -1,10 +1,14 @@
 import Aluno from "../models/Aluno.js"
+import bcrypt from "bcryptjs";
 
 export const createAluno = async (req, res, next) => {
     const aluno = new Aluno(req.body);
     try {
+        let salt = await bcrypt.genSalt(10);
+        let hashSenha = await bcrypt.hash(aluno.senha, salt);
+        aluno.senha = hashSenha;
+        //////////////////////////////////////
         const createAluno = await aluno.save();
-        
         res.status(201).json(createAluno);
     } catch (error) {
         next(error);
