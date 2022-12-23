@@ -8,5 +8,4 @@ const GrupoMuscularSchema = new Schema({
     },
 });
 
-
 export default mongoose.model("GrupoMuscular", GrupoMuscularSchema);

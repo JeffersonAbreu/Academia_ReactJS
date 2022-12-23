@@ -3,7 +3,7 @@ import { createError } from "../utils/error.js";
 
 export const verificarToken = (req, res, next) => {
     try {
-        const accessToken = req.cookies.accessToken;
+        const accessToken = req.headers["x-access-token"];
         if (!accessToken) {
             return next(createError(401, "Você não está autenticado."));
         }
@@ -17,20 +17,19 @@ export const verificarToken = (req, res, next) => {
 
 export const verificarUsuario = (req, res, next) => {
     verificarToken(req, res, () => {
-        if (req.aluno.id === req.params.id || req.aluno.admin) {
+        if (req.aluno.id === req.params.id) {
             next();
-        }
-        else {
-            return next(createError(403, "Você não tem permissão para acessar este recurso."))
+        } else {
+            return next(createError(403, "Você não tem permissão para acessar este recurso."));
         }
     });
 }
-export const verificarAdmin = (req, res, next) => {
+
+export const verificarAtivo = (req, res, next) => {
     verificarToken(req, res, () => {
-        if (req.aluno.admin) {
+        if (req.aluno.ativo) {
             next();
-        }
-        else {
+        } else {
             return next(createError(403, "Você não tem permissão para acessar este recurso."));
         }
     });
