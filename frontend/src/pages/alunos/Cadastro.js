@@ -1,10 +1,9 @@
-import { useEffect } from "react";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import * as yup from "yup";
 import axios from "axios";
 import bootstrap from "bootstrap/dist/js/bootstrap.bundle.min.js";
-import FormAluno from "../../components/FormAluno";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import * as yup from "yup";
+import FormAluno from "../../components/alunos/FormAluno";
 import InformModal from "../../components/InformModal";
 import { authHeader } from "../../services/authServices";
 
@@ -90,7 +89,7 @@ const Cadastro = () => {
                     });
                 });
         }
-    }, [inputs, validator]);
+    }, [inputs]);
 
     return (
         <>
@@ -99,7 +98,7 @@ const Cadastro = () => {
             </div>
             <hr />
             <form onSubmit={handleSubmit} noValidate autoComplete="off">
-                <FormAluno handleChange={handleChange} inputs={inputs} errors={errors}/>
+                <FormAluno handleChange={handleChange} inputs={inputs} errors={errors} isNew={true}/>
                 <div className="mt-3">
                     <Link to="/alunos" className="btn btn-secondary me-1">
                         Cancelar

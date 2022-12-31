@@ -1,20 +1,20 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import TableAlunos from "../../components/alunos/TableAlunos";
+import TableGruposMusculares from "../../components/gruposmusculares/TableGruposMusculares";
 import Loading from "../../components/Loading";
 import { authHeader } from "../../services/authServices";
 import "./Listagem.css";
 
 const Listagem = () => {
-    const [alunos, setAlunos] = useState([]);
+    const [gruposmusculares, setGruposMusculares] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    const carregarAlunos = () => {
+    const carregarGruposMusculares = () => {
         axios
-            .get("http://localhost:8080/api/alunos", { headers: authHeader() })
+            .get("http://localhost:8080/api/gruposmusculares", { headers: authHeader() })
             .then((response) => {
-                setAlunos(response.data);
+                setGruposMusculares(response.data);
                 setLoading(false);
             })
             .catch((error) => {
@@ -23,19 +23,19 @@ const Listagem = () => {
     };
 
     useEffect(() => {
-        carregarAlunos();
+        carregarGruposMusculares();
     }, []);
 
     return (
         <>
             <div className="d-flex justify-content-between align-items-center">
-                <h1>Alunos</h1>
-                <Link to="/alunos/cadastrar" className="btn btn-primary">
+                <h1>Grupos Musculares</h1>
+                <Link to="/gruposmusculares/cadastrar" className="btn btn-primary">
                     Novo
                 </Link>
             </div>
             <hr />
-            {loading ? <Loading /> : <TableAlunos alunos={alunos} setAlunos={setAlunos} />}
+            {loading ? <Loading /> : <TableGruposMusculares gruposmusculares={gruposmusculares} setGruposMusculares={setGruposMusculares} />}
         </>
     );
 };

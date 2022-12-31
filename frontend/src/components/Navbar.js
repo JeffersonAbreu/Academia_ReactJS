@@ -29,6 +29,21 @@ const Navbar = () => {
                             <NavLink to="/alunos" className="nav-link">
                                 Alunos
                             </NavLink>
+                            <NavLink to="/exercicios" className="nav-link">
+                                Exercícios
+                            </NavLink>
+                            <NavLink to="/fichas" className="nav-link">
+                                Fichas
+                            </NavLink>
+                            <NavLink to="/gruposmusculares" className="nav-link">
+                                Grupos Musculares
+                            </NavLink>
+                            <NavLink to="/instrutores" className="nav-link">
+                                Instrutores
+                            </NavLink>
+                            <NavLink to="/tiposexercicios" className="nav-link">
+                                Tipos Exercícios
+                            </NavLink>
                             {usuario.ativo && (
                                 <NavLink to="/ativos" className="nav-link">
                                     Ativos
@@ -43,6 +58,6 @@ const Navbar = () => {
             </nav>
         </>
     );
-};
+}
 
 export default Navbar;
