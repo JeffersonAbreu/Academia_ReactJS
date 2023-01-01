@@ -8,6 +8,13 @@ import Alunos from "./pages/alunos/Listagem";
 import GrupoMuscularAlteracao from "./pages/gruposmusculares/Alteracao";
 import GrupoMuscularCadastro from "./pages/gruposmusculares/Cadastro";
 import GruposMusculares from "./pages/gruposmusculares/Listagem";
+import InstrutorAlteracao from "./pages/instrutores/Alteracao";
+import InstrutorCadastro from "./pages/instrutores/Cadastro";
+import Instrutores from "./pages/instrutores/Listagem";
+import TipoExercicioAlteracao from "./pages/tiposexercicios/Alteracao";
+import TipoExercicioCadastro from "./pages/tiposexercicios/Cadastro";
+import TiposExercicios from "./pages/tiposexercicios/Listagem";
+
 import Leiaute from "./pages/Leiaute";
 import Login from "./pages/Login";
 import Logout from "./pages/Logout";
@@ -26,17 +33,31 @@ const App = () => {
                             <Route path="cadastrar" element={<AlunoCadastro />} />
                             <Route path="alterar/:id" element={<AlunoAlteracao />} />
                         </Route>
-                        {/* <Route path="exercicios">
-                            <Route index element={<Exercicios />} />
-                        </Route> */}
-                        {/* <Route path="fichas"></Route> */}
+                        <Route path="exercicios">
+                            {/* <Route index element={<Exercicios />} /> */}
+                            {/* <Route path="cadastrar" element={<ExercicioCadastro />} />
+                            <Route path="alterar/:id" element={<ExercicioAlteracao />} /> */}
+                        </Route>
+                        <Route path="fichas">
+                            {/* <Route index element={<Fichas />} />
+                            <Route path="cadastrar" element={<FichaCadastro />} />
+                            <Route path="alterar/:id" element={<FichaAlteracao />} /> */}
+                        </Route>
                         <Route path="gruposmusculares">
                             <Route index element={<GruposMusculares />} />
                             <Route path="cadastrar" element={<GrupoMuscularCadastro />} />
                             <Route path="alterar/:id" element={<GrupoMuscularAlteracao />} />
                         </Route>
-                        {/* <Route path="instrutores"></Route> */}
-                        {/* <Route path="tiposexercicios"></Route> */}
+                        <Route path="instrutores">
+                            <Route index element={<Instrutores />} />
+                            <Route path="cadastrar" element={<InstrutorCadastro />} />
+                            <Route path="alterar/:id" element={<InstrutorAlteracao />} />
+                        </Route>
+                        <Route path="tiposexercicios">
+                            <Route index element={<TiposExercicios />} />
+                            <Route path="cadastrar" element={<TipoExercicioCadastro />} />
+                            <Route path="alterar/:id" element={<TipoExercicioAlteracao />} />
+                        </Route>
                         <Route path="ativos" element={<Ativos />} />
                     </Route>
                     <Route path="/login" element={<Login />} />
